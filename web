@@ -1,0 +1,127 @@
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-white text-gray-800 p-8">
+      {/* Hero Section */}
+      <section className="text-center py-16">
+        <h1 className="text-4xl font-bold mb-4">
+          Turn Browsers into Buyers with UGC Ads Built to Convert
+        </h1>
+        <p className="text-lg mb-6 max-w-2xl mx-auto">
+          We create high-converting ad creatives, plug-and-play funnels, and CRO
+          insights for D2C brands — powered by performance, not guesswork.
+        </p>
+        <Button size="lg">Get Your First Ad Strategy Free</Button>
+      </section>
+
+      {/* What We Do Differently */}
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 py-12">
+        {[
+          {
+            title: "UGC Ads That Stop the Scroll",
+            desc: "Authentic video ads crafted by vetted creators. Optimized for TikTok, Meta, and Reels — built to match your brand and move product."
+          },
+          {
+            title: "CRO-Driven Landing Page Insights",
+            desc: "No more leaky funnels. We analyze your pages and show you exactly what’s costing you sales (and how to fix it)."
+          },
+          {
+            title: "Pre-Built Funnel Systems",
+            desc: "Abandoned cart flows, upsells, retargeting — done-for-you. Launch faster, scale smoother."
+          },
+          {
+            title: "The Conversion Library",
+            desc: "A Notion dashboard with swipe files, winning ad hooks, customer research, and proven frameworks."
+          }
+        ].map((item, i) => (
+          <Card key={i}>
+            <CardContent className="p-6">
+              <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+              <p className="text-sm text-gray-600">{item.desc}</p>
+            </CardContent>
+          </Card>
+        ))}
+      </section>
+
+      {/* Offer Stack */}
+      <section className="py-12">
+        <h2 className="text-2xl font-bold mb-4 text-center">What You Get</h2>
+        <div className="max-w-xl mx-auto text-center">
+          <ul className="space-y-2 text-left">
+            {[
+              "3 UGC Video Ads/Month",
+              "Performance Copywriting",
+              "Landing Page Audit + CRO Suggestions",
+              "Retargeting + Email/SMS Funnel Setup",
+              "Conversion Strategy Dashboard",
+              "Monthly Performance Report & Strategy Call"
+            ].map((item, i) => (
+              <li key={i} className="before:content-['✔️'] before:mr-2">{item}</li>
+            ))}
+          </ul>
+          <p className="italic mt-4">
+            “It’s like plugging a performance marketing team directly into your
+            D2C brand — without the overhead.”
+          </p>
+        </div>
+      </section>
+
+      {/* Try Us Risk-Free */}
+      <section className="bg-gray-100 p-8 rounded-xl my-12">
+        <h2 className="text-2xl font-bold mb-4 text-center">Try Us Risk-Free</h2>
+        <p className="max-w-2xl mx-auto text-center mb-4">
+          First Campaign Strategy = Free. No fluff. No sales call pressure. We’ll
+          analyze your current ad funnel and send a 3-part video breakdown.
+        </p>
+        <ul className="list-disc list-inside max-w-lg mx-auto text-left mb-6">
+          <li>Your top ad angle opportunity</li>
+          <li>What’s broken in your landing page flow</li>
+          <li>The ad style we’d launch first</li>
+        </ul>
+        <div className="text-center">
+          <Button size="lg">Get My Free Strategy Breakdown</Button>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-12">
+        <h2 className="text-2xl font-bold mb-6 text-center">Why Clients Stay</h2>
+        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+          {[
+            {
+              quote:
+                "We had 3x ROAS in our first week. The UGC was on-brand and actually sold.",
+              author: "Sarah M., Skincare D2C Founder"
+            },
+            {
+              quote:
+                "They made our entire funnel feel seamless — ads, landing pages, even the emails.",
+              author: "David P., Pet Supplement Brand"
+            }
+          ].map((item, i) => (
+            <Card key={i}>
+              <CardContent className="p-6">
+                <p className="italic mb-2">“{item.quote}”</p>
+                <p className="text-sm font-semibold">— {item.author}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="text-center py-12">
+        <h2 className="text-2xl font-bold mb-4">
+          Ready to run ads that actually convert?
+        </h2>
+        <p className="mb-6">
+          Let us show you how we’d scale your brand — no pitch, just value.
+        </p>
+        <Button size="lg">Get My Free Ad Strategy Now</Button>
+      </section>
+    </div>
+  );
+}
